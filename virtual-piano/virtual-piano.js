@@ -69,8 +69,18 @@ window.addEventListener('keyup', function(event) {
   });
 
 btn.forEach(element => element.addEventListener('click', function() {
-  if(btnLetters.classList.contains('btn-active')) btnLetters.classList.remove('btn-active');
-  if(btnNotes.classList.contains('btn-active')) btnNotes.classList.remove('btn-active');
+  if(btnLetters.classList.contains('btn-active')) {
+    btnLetters.classList.remove('btn-active');
+    for (i = 0; i < pianoKeys.length; i++){
+      pianoKeys[i].classList.remove('piano-key-letter');
+    }
+  }
+  if(btnNotes.classList.contains('btn-active')) {
+    btnNotes.classList.remove('btn-active');
+    for (i = 0; i < pianoKeys.length; i++){
+      pianoKeys[i].classList.add('piano-key-letter');
+    }
+  }
   element.classList.add('btn-active');
 }));
 
