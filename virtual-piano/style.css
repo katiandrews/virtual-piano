@@ -150,6 +150,7 @@ body {
 .piano-key::after {
 	display: none;
 	content: attr(data-letter);
+	pointer-events: none;
 }
 .piano-key:hover::before,
 .piano-key:hover::after {
@@ -162,6 +163,7 @@ body {
 
 .piano-key.sharp::before,
 .piano-key.sharp::after {
+	pointer-events: none;
 	bottom: 175px;
 	left: 7px;
 }
