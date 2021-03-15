@@ -8,13 +8,13 @@ a:focus {
 	outline: 0;
 }
 html {
-	background: #313940;
+	background: #403531;
 }
 body {
 	min-height: 100vh;
-	background-color: #313940;
+	background-color: #403531;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
-	background: #313940;
+	background: #403531;
 	overflow-x: hidden;
 }
 .header {
@@ -37,8 +37,9 @@ body {
 	justify-content: flex-start;
 	align-items: space-between;
 	width: 100%;
-	max-width: 1140px;
+	max-width: 1540px;
 	margin: 0 auto;
+	background: url(assets/img/piano-bg.jpg) center;
 }
 .btn-container {
 	display: flex;
@@ -67,13 +68,13 @@ body {
 	background-color: #515961;
 }
 .btn:active {
-	background-color: #00c9b7;
+	background-color: #0050c9;
 }
 .btn-active {
-	background-color: #00b4a4;
+	background-color: #0030b4;
 }
 .btn-active:hover {
-	background-color: #00c9b7;
+	background-color: #0040c9;
 }
 .piano {
 	position: relative;
@@ -89,13 +90,13 @@ body {
 	width: 80px;
 	height: 270px;
 	background-color: rgba(255, 255, 255, 0.85);
-	border: 4px solid #313940;
+	border: 4px solid #5e3921;
 	border-radius: 0px 0px 12px 12px;
 	transition: 0.3s;
 	cursor: pointer;
 }
 .piano-key:hover {
-	background-color: #fff;
+	background-color: #e6c6b3;
 }
 
 .piano .active {
@@ -115,7 +116,7 @@ body {
 .piano-key.sharp {
 	width: 54px;
 	height: 170px;
-	background-color: #313940;
+	background-color: #0f0803;
 	border: 0;
 	border-radius: 0px 0px 9px 9px;
 	top: 0;
@@ -142,7 +143,7 @@ body {
 	font-size: 26px;
 	line-height: 40px;
 	text-align: center;
-	color: #a2abb3;
+	color: #ffffff;
 	bottom: -45px;
 	left: 20px;
 	transition: 0.3s;
@@ -154,7 +155,7 @@ body {
 }
 .piano-key:hover::before,
 .piano-key:hover::after {
-	color: #d7dfe6;
+	color: #ffe8da;
 }
 
 .sharp:active {
@@ -185,7 +186,7 @@ body {
 .piano-key-active-pseudo:hover::before,
 .piano .piano-key-active::after,
 .piano .piano-key-active::before {
-	color: #00b4a4;
+	color: #0040c9;
 }
 
 .fullscreen {
