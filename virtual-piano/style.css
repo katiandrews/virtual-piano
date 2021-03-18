@@ -96,7 +96,7 @@ body {
 	cursor: pointer;
 }
 .piano-key:hover {
-	background-color: #e6c6b3;
+	background-color: #ffffff;
 }
 
 .piano .active {
@@ -124,6 +124,11 @@ body {
 	pointer-events: auto;
 	transform-origin: center top;
 }
+
+.piano-key.sharp:hover {
+	background-color: #1f1f1f;
+}
+
 .piano-key.piano-key-active,
 .piano-key.sharp.piano-key-active {
 	transform: scale(0.96);
@@ -147,6 +152,7 @@ body {
 	bottom: -45px;
 	left: 20px;
 	transition: 0.3s;
+	pointer-events: none;
 }
 .piano-key::after {
 	display: none;
