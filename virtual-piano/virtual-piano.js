@@ -26,17 +26,20 @@ piano.addEventListener('mousedown', (event) => {
   });
 //makes key inactive when mouse is not pressed
 window.addEventListener('mouseup', (event) => {
-      event.target.classList.toggle('piano-key-active')
-      isMousedown = false;   
+  isMousedown = false;    
+  if (event.target.classList.contains('piano-key-active')) {
+    event.target.classList.toggle('piano-key-active');
+  }
   });
 
-//plays note is mouse is pressed and mouse over the key
-piano.addEventListener('mouseover', (event) => {
+//plays note if mouse is pressed and mouse over the key
+piano.addEventListener('mousemove', (event) => {
     if (event.target.classList.contains('piano-key')) {
       if (isMousedown) {
+      if (event.target.classList.contains('piano-key-active')) return;
       const note = event.target.dataset.note;
       const src = `assets/audio/${note}.mp3`;
-      event.target.classList.toggle('piano-key-active')
+      event.target.classList.toggle('piano-key-active');
       playAudio(src);
       }  
     }   
@@ -71,6 +74,7 @@ window.addEventListener('keyup', function(event) {
 
 //switch between Letters and Notes buttons
 btn.forEach (element => element.addEventListener('click', function() {
+  if (element.classList.contains('btn-active')) return;
   if (btnLetters.classList.contains('btn-active')) {
     btnLetters.classList.remove('btn-active');
     for (i = 0; i < pianoKeys.length; i++){
@@ -102,12 +106,3 @@ function toggleFullScreen() {
 fullscreenButton.addEventListener('click', function(event) {
   toggleFullScreen();
 })
-
-//when esc button is pressed return to non-fullscreen mode
-document.addEventListener("keydown", function(event) {
-  if (event.keyCode === 27) {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-});
